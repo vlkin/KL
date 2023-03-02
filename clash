@@ -27,7 +27,6 @@ proxy-groups:
       - 🤘 手动选择
       - 🌎 1
       - 🌏 2
-      - 🌏 3
   - name: ♻️ 自动选择
     type: url-test
     url: https://www.google.com/generate_204
@@ -36,13 +35,11 @@ proxy-groups:
     use:
       - 🌎 1_providers
       - 🌏 2_providers
-      - 🌏 3_providers
   - name: 🤘 手动选择
     type: select
     use:
       - 🌎 1_providers
       - 🌏 2_providers
-      - 🌏 3_providers
 
   - name: 🌎 1
     type: url-test
@@ -56,28 +53,11 @@ proxy-groups:
     interval: 300
     use:
       - 🌏 2_providers
-  - name: 🌏 3
-    type: url-test
-    url: https://www.google.com/generate_204
-    interval: 300
-    use:
-      - 🌏 3_providers
 
 #=================================================proxy-providers===============================================
 proxy-providers:
-  # https://github.com/alanbobs999/TopFreeProxies
-  🌎 1_providers:
-    type: http
-    path: ./p1.yaml
-    url: https://ghproxy.com/https://raw.githubusercontent.com/Jason6111/TopFreeProxies/master/Eternity.yaml
-    #url: https://fastly.jsdelivr.net/gh/alanbobs999/TopFreeProxies@master/Eternity.yaml
-    interval: 36000 # 每36000秒更新一次订阅
-    health-check:
-      enable: true # 是否自动进行latency-test
-      url: https://www.google.com/generate_204
-      interval: 3600
   # https://github.com/Jsnzkpg/Jsnzkpg （TG电报频道链接 https://t.me/Jsnzk）
-  🌏 2_providers:
+  🌎 1_providers:
     type: http
     path: ./p2.yaml
     url: https://api.subcloud.xyz/sub?target=clash&url=https%3A%2F%2Fpastebin.com%2Fraw%2FGxR5pELe&insert=false&config=https%3A%2F%2Fraw.githubusercontent.com%2FACL4SSR%2FACL4SSR%2Fmaster%2FClash%2Fconfig%2FACL4SSR_Online.ini&emoji=true&list=false&tfo=false&scv=true&fdn=true&sort=true&udp=true&new_name=true
@@ -87,7 +67,7 @@ proxy-providers:
       url: https://www.google.com/generate_204
       interval: 3600
   #https://raw.githubusercontent.com/chfchf0306/clash/main/clash
-  🌏 3_providers:
+  🌏 2_providers:
     type: http
     path: ./p3.yaml
     url: https://ghproxy.com/https://raw.githubusercontent.com/chfchf0306/clash/main/clash
